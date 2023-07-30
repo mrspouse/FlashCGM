@@ -1,0 +1,60 @@
+{
+  "fitbit": {
+    "appUUID": "e56ff2d7-5836-429c-a10c-10b1bb42dc54",
+    "appType": "clockface",
+    "appDisplayName": "FlashCGM",
+    "iconFile": "resources/icon.png",
+    "wipeColor": "#f44336",
+    "requestedPermissions": [
+      "access_activity",
+      "access_user_profile",
+      "access_heart_rate",
+      "access_internet",
+      "run_background"
+    ],
+    "buildTargets": [
+      "atlas",
+      "vulcan"
+    ],
+    "i18n": {
+      "en": {
+        "name": "FlashCGM"
+      },
+      "de": {
+        "name": "FlashCGM"
+      },
+      "es": {
+        "name": "FlashCGM"
+      },
+      "fr": {
+        "name": "FlashCGM"
+      },
+      "it": {
+        "name": "FlashCGM"
+      },
+      "ja": {
+        "name": "FlashCGM"
+      },
+      "ko": {
+        "name": "FlashCGM"
+      },
+      "nl": {
+        "name": "FlashCGM"
+      },
+      "sv": {
+        "name": "FlashCGM"
+      },
+      "zh-cn": {
+        "name": "FlashCGM"
+      }
+    }
+  },
+  "devDependencies": {
+    "@fitbit/sdk": "^6.0.2",
+    "@fitbit/sdk-cli": "^1.7.3"
+  },
+  "scripts": {
+    "build": "fitbit-build"
+  },
+  "dependencies": {}
+}
