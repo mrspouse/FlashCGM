@@ -390,6 +390,7 @@ function updategraph(data) {
   var delta = data.bgdata.delta;
   var lastPollTime = data.bgdata.lastPollTime;
   lastReadingTimestamp = data.bgdata.lastPollTime;
+  console.log("Delta1: " + delta + " p47=" + points[47] + " p46=" + points[46] + " " + myDelta.text);
 
   // Check to see if we have a reading or a missed reading and update display appropriately
   // Also triger an alert if we are outside of target range.
@@ -431,7 +432,7 @@ function updategraph(data) {
         } else if (prefBgUnits === "mmol") {
           delta = mmol(delta);
           myDelta.text = "\u2206" + delta;
-        }
+}
         if (Math.abs(delta) < 9) { myDelta.style.fill = "fb-green"; }
         else if ((Math.abs(delta) >= 9) && (Math.abs(delta) < 18)) { myDelta.style.fill = "yellow"; }
         else { myDelta.style.fill = "red"; }

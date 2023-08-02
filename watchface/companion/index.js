@@ -177,7 +177,7 @@ function buildGraphData(data) {
       if (!validTimeStamp) {
         lastTimestamp = obj[index].date;
         bgTrend = obj[index].direction;
-        bgdelta = obj[index].delta;
+        bgdelta = obj[index].delta / 300000;
         validTimeStamp = true;
       }
     }
@@ -193,7 +193,7 @@ function buildGraphData(data) {
       "delta": bgdelta
     }
   };
-  // console.log(JSON.stringify(messageContent));
+  console.log(JSON.stringify(messageContent));
   if (messaging.peerSocket.readyState === messaging.peerSocket.OPEN) {
     messaging.peerSocket.send(messageContent);
   } else {
