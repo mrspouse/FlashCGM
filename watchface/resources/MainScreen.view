@@ -4,7 +4,7 @@
   <text class="battery" id="batteryPercent">xx</text>
   <text id="myLabel" />
 /*  Add the BG stuff to the display */
-  <line id="upperVert" x1="60%" y1="4%" x2="60%" y2="60%" fill="#333333" stroke-width="2" />
+  <line id="upperVert" x1="60%" y1="4%" x2="62%" y2="62%" fill="#333333" stroke-width="2" />
   <text id="myDelta" >&#8710;xx</text>
   <text id="myCurrentBG" />
   <text id="myBGUnits" />
@@ -27,7 +27,7 @@
   <image x="87%-15" y="225" width="30" height="30" href="images/Twemoji.png" />
   <text id="myHR" />
 /*  Changed width here to get rid of the gradient on the BG stuff, was 348 px. */
-  <gradientRect id="clockShade" width="60%" height="41%"
+  <!-- <gradientRect id="clockShade" width="60%" height="41%"
                 gradient-type="linear"
                 gradient-x1="0"
                 gradient-y1="45%"
@@ -37,7 +37,7 @@
                 gradient-color2="#000000"
                 gradient-opacity1="0"
                 gradient-opacity2="0.8"
-  />
+  /> -->
   <arc x="33" y="64%" width="50" height="50" fill="#333344" arc-width="2" start-angle="0" sweep-angle="360" />
   <arc x="62%-25" y="64%"  width="50" height="50" fill="#333344" arc-width="2" start-angle="0" sweep-angle="360" />
   <arc x="87%-25" y="64%" width="50" height="50" fill="#333344" arc-width="2" start-angle="0" sweep-angle="360" />
