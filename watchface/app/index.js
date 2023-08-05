@@ -195,7 +195,7 @@ function applyTheme(background, foreground) {
   // console.log("Called applyTheme!");
   myClock.style.fill = background;
   dailysteps.style.fill = background;
-  dailystairs.style.fill = background;
+  // dailystairs.style.fill = background;
   dailycals.style.fill = background;
   heart.style.fill = background;
   myDate.style.fill = foreground;
@@ -205,17 +205,17 @@ function applyTheme(background, foreground) {
 
 function updateStats() {
   const metricSteps = "steps";  // distance, calories, elevationGain, activeMinutes
-  const amountSteps = today.adjusted[metricSteps] || 0;
+  const amountSteps = today.adjusted[metricSteps] || 0; 
   const metricCals = "calories";  // distance, calories, elevationGain, activeMinutes
   const amountCals = today.adjusted[metricCals] || 0;
-  if (Barometer) {
-    //console.log("This device has a Barometer!");
-    const metricElevation = "elevationGain";
-    const amountElevation = today.adjusted[metricElevation] || 0
-    dailystairs.text = amountElevation;
-  } else {
-    //console.log("This device does NOT have a Barometer!");
-  }
+  // if (Barometer) {
+  //   //console.log("This device has a Barometer!");
+  //   const metricElevation = "elevationGain";
+  //   const amountElevation = today.adjusted[metricElevation] || 0
+  //   dailystairs.text = amountElevation;
+  // } else {
+  //   //console.log("This device does NOT have a Barometer!");
+  // }
 
   let stepString = util.thsdDot(amountSteps);
   let calString = util.thsdDot(amountCals);

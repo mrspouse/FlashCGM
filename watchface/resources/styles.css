@@ -36,7 +36,7 @@
 }
 
 #myLabel {
-  font-size: 80;
+  font-size: 78;
   font-weight: bold;
   font-family: Colfax-Light;
   text-length: 80;
@@ -133,12 +133,12 @@
   font-family: System-Regular;
   text-length: 80;
   text-anchor: middle;
-  x: 58;
+  x: 130;
   y: 87%;
   fill: #f8fcf8;
 }
 
-#myStairs {
+/* #myStairs {
   font-size: 28;
   font-family: System-Regular;
   text-length: 30;
@@ -147,7 +147,7 @@
   y: 75%;
   fill: #f8fcf8;
 }
-
+ */
 
 #myCals {
   font-size: 28;
