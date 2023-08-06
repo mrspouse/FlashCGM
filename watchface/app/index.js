@@ -101,7 +101,7 @@ if (Barometer) {
   //console.log("This device has a Barometer!");
 } else {
   //console.log("This device does NOT have a Barometer!");
-  //Hide Stairs
+  //Hide Stairs  
   let stairsimage = document.getElementById("stairsimage");
   dailystairs.display = "none";
   stairsimage.style.display = "none";
@@ -274,7 +274,7 @@ function updateClock() {
   if (typeof util.weekday[prefix] === 'undefined') {
     prefix = 'en';
   }
-  let divide = "/";
+  let divide = " ";
   if (prefix == 'de') {
     divide = ".";
   } else if (prefix == "nl" || prefix == "ko") {
@@ -284,7 +284,7 @@ function updateClock() {
   myClock.text = `${hours}:${mins}`;
   if (dateFormat === 'YMD') {
     datestring = year + divide + month + divide + day;
-    myDate.text = `${datestring} - ${util.weekday[prefix][wday]}`;
+    myDate.text = `${datestring}`;
   }
   else if (dateFormat === 'MDY') {
     var namemonth = new Array();
@@ -301,10 +301,10 @@ function updateClock() {
     namemonth[10] = "Nov";
     namemonth[11] = "Dec";
     month = namemonth[today.getMonth()];
-    datestring = month + "-" + day + "-" + year;
-    myDate.text = `${util.weekday[prefix][wday]}, ${datestring}`;
+    datestring = month + " " + day + " " + year;
+    myDate.text = `${datestring}`;
   }
-  else { myDate.text = `${util.weekday[prefix][wday]}, ${datestring}`; }
+  else { myDate.text = `${datestring}`; }
 
 
   updateStats();
