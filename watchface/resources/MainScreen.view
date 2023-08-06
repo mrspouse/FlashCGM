@@ -18,7 +18,7 @@
   <text id="myDate" />
   <line id="bottomLine" x1="4%" y1="60%" x2="96%" y2="60%" fill="#333333" stroke-width="1" />
 
-  <image x="120" y="225" width="30" height="30" href="images/footsteps-silhouette.png" />
+  <image x="87" y="225" width="30" height="30" href="images/footsteps-silhouette.png" />
   <text id="mySteps" />
   <!-- <image x="120" y="77%" width="25" height="25" href="images/stairs.png" />
   <text id="myStairs" /> -->
@@ -39,11 +39,11 @@
                 gradient-opacity2="0.8"
   /> -->
   <!-- Changed first arc to x=100 -->
-  <arc x="110" y="64%" width="50" height="50" fill="#333344" arc-width="2" start-angle="0" sweep-angle="360" />
+  <arc x="30%-25" y="64%" width="50" height="50" fill="#333344" arc-width="2" start-angle="0" sweep-angle="360" />
   <arc x="62%-25" y="64%"  width="50" height="50" fill="#333344" arc-width="2" start-angle="0" sweep-angle="360" />
   <arc x="87%-25" y="64%" width="50" height="50" fill="#333344" arc-width="2" start-angle="0" sweep-angle="360" />
 
-  <arc id="stepsArc" x="110" y="64%" width="50" height="50" fill="#4edcfb" arc-width="2" start-angle="0" sweep-angle="0" />
+  <arc id="stepsArc" x="30%-25" y="64%" width="50" height="50" fill="#4edcfb" arc-width="2" start-angle="0" sweep-angle="0" />
   <arc id="calsArc" x="62%-25" y="64%" width="50" height="50" fill="#ff882c" arc-width="2" start-angle="0" sweep-angle="0" />
   <arc id="hrtArc" x="87%-25" y="64%" width="50" height="50" fill="#c00000" arc-width="2" start-angle="0" sweep-angle="0" />
 
