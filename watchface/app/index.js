@@ -144,7 +144,7 @@ let scale4 = document.getElementById("scale4");
 let scale5 = document.getElementById("scale5");
 let button1 = document.getElementById("button1");
 let button2 = document.getElementById("button2");
-let arrowIcon = { "Flat": "\u{2192}", "DoubleUp": "\u{2191}\u{2191}", "SingleUp": "\u{2191}", "FortyFiveUp": "\u{2197}", "FortyFiveDown": "\u{2198}", "SingleDown": "\u{2193}", "DoubleDown": "\u{2193}\u{2193}", "None": "-", "NOT COMPUTABLE": "-", "RATE OUT OF RANGE": "-" };
+let arrowIcon = { "Flat": "\u{2192}", "DoubleUp": "\u{2191}", "SingleUp": "\u{2191}", "FortyFiveUp": "\u{2197}", "FortyFiveDown": "\u{2198}", "SingleDown": "\u{2193}", "DoubleDown": "\u{2193}", "None": "-", "NOT COMPUTABLE": "-", "RATE OUT OF RANGE": "-" };
 
 //Inserted for main screen CGM Data
 let myCurrentBG = document.getElementById("myCurrentBG");
