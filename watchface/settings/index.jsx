@@ -78,7 +78,7 @@ function mySettings(props) {
         </Text>
         <Text>https://github.com/PedanticAvenger/FlashCGM/wiki</Text>
         <Toggle
-          settingsKey="nightscoutToggle"
+          settingsKey="nsToggle"
           label="Set Nightscout as datasource?"
         />
         <Select

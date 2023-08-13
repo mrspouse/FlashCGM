@@ -13,8 +13,7 @@
       "run_background"
     ],
     "buildTargets": [
-      "atlas",
-      "vulcan"
+      "atlas"
     ],
     "i18n": {
       "en": {

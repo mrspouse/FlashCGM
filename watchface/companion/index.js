@@ -35,28 +35,30 @@ messaging.peerSocket.close = () => {
 }
 
 const dataPoll = () => {
-  nsToggle = JSON.parse(settingsStorage.getItem("nsToggle"));
-  // console.log("nsToggle:" + nsToggle);
+  nsToggle = JSON.parse(settingsStorage.getItem("nightscoutToggle"));
+  console.log("nsToggle:" + nsToggle);
   if (nsToggle) {
-    dataUrl = JSON.parse(settingsStorage.getItem("dataSourceURL")).name;
+    dataUrl = JSON.parse(settingsStorage.getItem("dataSourceURL")).name 
+    + "/api/v1/entries/sgv.json";
+    console.log(dataUrl);
     // dataToken = JSON.parse(settingsStorage.getItem("dataToken")).name;
-    dataUrl = dataUrl + "/api/v1/entries/sgv.json?count=48&brief_mode=Y";
     // dataUrl = dataUrl + "&token=" + dataToken;
   } else {
     dataSource = JSON.parse(settingsStorage.getItem("dataSource")).name;
     if (dataSource == "xdrip") {
       dataUrl = "http://127.0.0.1:17580/sgv.json";
+      console.log(dataUrl);
     } else {
       if (dataSource == "spike") {
         dataUrl = "http://127.0.0.1:1979/api/v1/sgv.json";
+        console.log(dataUrl);
       }
     }
-    dataUrl = dataUrl + "?count=48&brief_mode=Y";
   }
 
   console.log('Open Data API CONNECTION');
-  console.log(dataUrl);
   if (dataUrl) {
+    dataUrl = dataUrl + "?count=48&brief_mode=Y";
     fetch(dataUrl, {
       method: 'GET',
       mode: 'cors',
@@ -131,7 +133,8 @@ function buildSettings() {
       "bgLowLevel": bgLowLevel,
       "dateFormat": dateFormat,
       "rightSnooze": rightSnooze,
-      "leftSnooze": leftSnooze
+      "leftSnooze": leftSnooze,
+      "nightscoutToggle": nsToggle
     },
   }; // end of messageContent
   if (messaging.peerSocket.readyState === messaging.peerSocket.OPEN) {
