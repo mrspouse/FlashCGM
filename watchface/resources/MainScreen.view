@@ -24,7 +24,7 @@
   <text id="myStairs" /> -->
   <image x="50%" y="225" width="20" height="30" href="images/purepulse-calorie.png" />
   <text id="myCals" />
-  <image x="100%-60" y="225" width="30" height="30" href="images/Twemoji.png" />
+  <image x="100%-62" y="225" width="30" height="30" href="images/Twemoji.png" />
   <text id="myHR" />
 /*  Changed width here to get rid of the gradient on the BG stuff, was 348 px. */
   <!-- <gradientRect id="clockShade" width="60%" height="41%"
@@ -41,10 +41,10 @@
   <!-- Changed first arc to x=100 -->
   <arc x="40" y="64%" width="50" height="50" fill="#333344" arc-width="2" start-angle="0" sweep-angle="360" />
   <arc x="50%-15" y="64%"  width="50" height="50" fill="#333344" arc-width="2" start-angle="0" sweep-angle="360" />
-  <arc x="100%-70" y="64%" width="50" height="50" fill="#333344" arc-width="2" start-angle="0" sweep-angle="360" />
+  <arc x="100%-72" y="64%" width="50" height="50" fill="#333344" arc-width="2" start-angle="0" sweep-angle="360" />
 
   <arc id="stepsArc" x="40" y="64%" width="50" height="50" fill="#4edcfb" arc-width="2" start-angle="0" sweep-angle="0" />
   <arc id="calsArc" x="50%-15" y="64%" width="50" height="50" fill="#ff882c" arc-width="2" start-angle="0" sweep-angle="0" />
-  <arc id="hrtArc" x="100%-70" y="64%" width="50" height="50" fill="#c00000" arc-width="2" start-angle="0" sweep-angle="0" />
+  <arc id="hrtArc" x="100%-72" y="64%" width="50" height="50" fill="#c00000" arc-width="2" start-angle="0" sweep-angle="0" />
 
 </svg>
