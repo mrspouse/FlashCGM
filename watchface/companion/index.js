@@ -133,8 +133,7 @@ function buildSettings() {
       "bgLowLevel": bgLowLevel,
       "dateFormat": dateFormat,
       "rightSnooze": rightSnooze,
-      "leftSnooze": leftSnooze,
-      "nightscoutToggle": nsToggle
+      "leftSnooze": leftSnooze
     },
   }; // end of messageContent
   if (messaging.peerSocket.readyState === messaging.peerSocket.OPEN) {
