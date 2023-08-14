@@ -52,7 +52,7 @@
   text-length: 40;
   text-anchor: middle;
   x: 30%;
-  y: 56%;
+  y: 55%;
   fill: #707070;
 }
 
@@ -133,7 +133,7 @@
   font-family: System-Regular;
   text-length: 80;
   text-anchor: middle;
-  x: 65;
+  x: 67;
   y: 87%;
   fill: #f8fcf8;
 }
@@ -154,7 +154,7 @@
   font-family: System-Regular;
   text-length: 80;
   text-anchor: middle;
-  x: 50%+10;
+  x: 50%+12;
   y: 87%;
   fill: #f8fcf8;
 }
