@@ -20,29 +20,17 @@
 
   <image x="55" y="225" width="30" height="30" href="images/footsteps-silhouette.png" />
   <text id="mySteps" />
-  <image x="50%+5" y="225" width="20" height="30" href="images/dist.png" />
+  <image x="50%+5" y="225" width="30" height="30" href="images/dist.png" />
   <text id="myDist" />
   <image x="100%-64" y="225" width="30" height="30" href="images/Twemoji.png" />
   <text id="myHR" />
-/*  Changed width here to get rid of the gradient on the BG stuff, was 348 px. */
-  <!-- <gradientRect id="clockShade" width="60%" height="41%"
-                gradient-type="linear"
-                gradient-x1="0"
-                gradient-y1="45%"
-                gradient-x2="0"
-                gradient-y2="100%"
-                gradient-color1="#000000"
-                gradient-color2="#000000"
-                gradient-opacity1="0"
-                gradient-opacity2="0.8"
-  /> -->
-  <!-- Changed first arc to x=100 -->
-  <arc x="45" y="64%" width="50" height="50" fill="#333344" arc-width="2" start-angle="0" sweep-angle="360" />
-  <arc x="50%-10" y="64%"  width="50" height="50" fill="#333344" arc-width="2" start-angle="0" sweep-angle="360" />
+
+  <arc x="49" y="64%" width="50" height="50" fill="#333344" arc-width="2" start-angle="0" sweep-angle="360" />
+  <arc x="50%-9" y="64%"  width="50" height="50" fill="#333344" arc-width="2" start-angle="0" sweep-angle="360" />
   <arc x="100%-76" y="64%" width="50" height="50" fill="#333344" arc-width="2" start-angle="0" sweep-angle="360" />
 
-  <arc id="stepsArc" x="40" y="64%" width="50" height="50" fill="#4edcfb" arc-width="2" start-angle="0" sweep-angle="0" />
-  <arc id="distArc" x="50%-10" y="64%" width="50" height="50" fill="#ff882c" arc-width="2" start-angle="0" sweep-angle="0" />
+  <arc id="stepsArc" x="44" y="64%" width="50" height="50" fill="#4edcfb" arc-width="2" start-angle="0" sweep-angle="0" />
+  <arc id="distArc" x="50%-4" y="64%" width="50" height="50" fill="#ff882c" arc-width="2" start-angle="0" sweep-angle="0" />
   <arc id="hrtArc" x="100%-72" y="64%" width="50" height="50" fill="#c00000" arc-width="2" start-angle="0" sweep-angle="0" />
 
 </svg>
