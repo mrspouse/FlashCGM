@@ -77,20 +77,21 @@ if (Barometer) {
   let stairsimage = document.getElementById("stairsimage");
   dailystairs.display = "none";
   stairsimage.style.display = "none";
-  //Move Steps
+
   let stepsimage = document.getElementById("stepsimage");
   let stepsArcBckg = document.getElementById("stepsArcBckg");
   stepsimage.x = 45;
   dailysteps.x = 60;
   stepRing.x = 35;
   stepsArcBckg.x = 35;
+
   let distimage = document.getElementById("distimage");
   let distArcBckg = document.getElementById("distArcBckg");
   distimage.x = 140;
   dailydist.x = 150;
   distRing.x = 125;
   distArcBckg.x = 125;
-  //Move HR
+
   let hrimage = document.getElementById("hrimage");
   let hrtArcBckg = document.getElementById("hrtArcBckg");
   hrimage.x = 225;
@@ -196,6 +197,7 @@ function updateStats() {
     stepRing.fill = "#58e078";
   }
   stepRing.sweepAngle = stepAngle;
+
   dailydist.text = distString;
   let distAngle = Math.floor(360 * (amountDist / distanceGoal));
   if (distAngle > 360) {
@@ -203,6 +205,7 @@ function updateStats() {
     distRing.fill = "#58e078";
   }
   distRing.sweepAngle = distAngle;
+  
   if (batteryStats.get().chargestatus == true) {
     myBatteryLevel.text = "Charging";
     myBattery.width = 0;
@@ -212,6 +215,10 @@ function updateStats() {
     myBattery.width = Math.min(batteryStats.get().level / 3, 29);
     myBattery.fill = batteryStats.get().fill;
   }
+// Reset rings to zero to hide them
+stepRing.sweepAngle = 0;
+distRing.sweepAngle = 0;
+heartRing.sweepAngle = 0;
 }
 
 var hrm = new HeartRateSensor();

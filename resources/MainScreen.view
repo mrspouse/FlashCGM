@@ -25,9 +25,9 @@
   <image x="100%-64" y="225" width="30" height="30" href="images/Twemoji.png" />
   <text id="myHR" />
 
-  <arc x="49" y="64%" width="50" height="50" fill="#333344" arc-width="2" start-angle="0" sweep-angle="360" />
-  <arc x="50%-9" y="64%"  width="50" height="50" fill="#333344" arc-width="2" start-angle="0" sweep-angle="360" />
-  <arc x="100%-76" y="64%" width="50" height="50" fill="#333344" arc-width="2" start-angle="0" sweep-angle="360" />
+  <arc x="49" y="64%" width="50" height="50" fill="#333344" arc-width="2" start-angle="0" sweep-angle="0" />
+  <arc x="50%-9" y="64%"  width="50" height="50" fill="#333344" arc-width="2" start-angle="0" sweep-angle="0" />
+  <arc x="100%-76" y="64%" width="50" height="50" fill="#333344" arc-width="2" start-angle="0" sweep-angle="0" />
 
   <arc id="stepsArc" x="44" y="64%" width="50" height="50" fill="#4edcfb" arc-width="2" start-angle="0" sweep-angle="0" />
   <arc id="distArc" x="50%-4" y="64%" width="50" height="50" fill="#ff882c" arc-width="2" start-angle="0" sweep-angle="0" />
