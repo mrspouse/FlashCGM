@@ -42,7 +42,6 @@ let backgdcol = json_themeread.backg || "#f8fcf8";
 let foregdcol = json_themeread.foreg || "#707070";
 
 // Get Goals to reach
-// const caloriesGoal = goals["calories"];
 const distanceGoal = util.getDistance(goals.distance, units.distance).lbl;
 const stepsGoal = goals.steps;
 const elevationGoal = goals.elevationGain;
@@ -60,11 +59,11 @@ var dateFormat;
 
 //Normal Flashring handles below.
 let dailysteps = document.getElementById("mySteps");
-let dailycals = document.getElementById("myCals");
+let dailydist = document.getElementById("myDist");
 let currentheart = document.getElementById("myHR");
 let heartRing = document.getElementById("hrtArc");
 let stepRing = document.getElementById("stepsArc");
-let calRing = document.getElementById("calsArc");
+let distRing = document.getElementById("distArc");
 let heart = document.getElementById("myHR");
 let otherData = document.getElementById("otherData");
 let upperLine = document.getElementById("upperLine");
@@ -85,13 +84,12 @@ if (Barometer) {
   dailysteps.x = 60;
   stepRing.x = 35;
   stepsArcBckg.x = 35;
-  //Move Calories
-  let calorieimage = document.getElementById("calorieimage");
-  let calsArcBckg = document.getElementById("calsArcBckg");
-  calorieimage.x = 140;
-  dailycals.x = 150;
-  calRing.x = 125;
-  calsArcBckg.x = 125;
+  let distimage = document.getElementById("distimage");
+  let distArcBckg = document.getElementById("distArcBckg");
+  distimage.x = 140;
+  dailydist.x = 150;
+  distRing.x = 125;
+  distArcBckg.x = 125;
   //Move HR
   let hrimage = document.getElementById("hrimage");
   let hrtArcBckg = document.getElementById("hrtArcBckg");
@@ -169,7 +167,7 @@ function applyTheme(background, foreground) {
   myClock.style.fill = background;
   dailysteps.style.fill = background;
   // dailystairs.style.fill = background;
-  dailycals.style.fill = background;
+  dailydist.style.fill = background;
   heart.style.fill = background;
   myDate.style.fill = foreground;
   upperLine.style.fill = foreground;
@@ -177,11 +175,9 @@ function applyTheme(background, foreground) {
 }
 
 function updateStats() {
-  const metricSteps = "steps";  // distance, calories, elevationGain, activeMinutes
+  const metricSteps = "steps";  
   const amountSteps = today.adjusted[metricSteps] || 0; 
-  const metricCals = "calories";  // distance, calories, elevationGain, activeMinutes
-  // const amountCals = today.adjusted[metricCals] || 0;
-  const amountCals = util.getDistance(today.adjusted.distance, units.distance).lbl;
+  const amountDist = util.getDistance(today.adjusted.distance, units.distance).lbl;
   // if (Barometer) {
   //   //console.log("This device has a Barometer!");
   //   const metricElevation = "elevationGain";
@@ -192,7 +188,7 @@ function updateStats() {
   // }
 
   let stepString = util.thsdDot(amountSteps);
-  let calString = util.thsdDot(amountCals);
+  let distString = util.thsdDot(amountDist);
   dailysteps.text = stepString;
   let stepAngle = Math.floor(360 * (amountSteps / stepsGoal));
   if (stepAngle > 360) {
@@ -200,13 +196,13 @@ function updateStats() {
     stepRing.fill = "#58e078";
   }
   stepRing.sweepAngle = stepAngle;
-  dailycals.text = calString;
-  let calAngle = Math.floor(360 * (amountCals / distanceGoal));
-  if (calAngle > 360) {
-    calAngle = 360;
-    calRing.fill = "#58e078";
+  dailydist.text = distString;
+  let distAngle = Math.floor(360 * (amountDist / distanceGoal));
+  if (distAngle > 360) {
+    distAngle = 360;
+    distRing.fill = "#58e078";
   }
-  calRing.sweepAngle = calAngle;
+  distRing.sweepAngle = distAngle;
   if (batteryStats.get().chargestatus == true) {
     myBatteryLevel.text = "Charging";
     myBattery.width = 0;

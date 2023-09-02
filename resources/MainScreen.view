@@ -20,11 +20,8 @@
 
   <image x="55" y="225" width="30" height="30" href="images/footsteps-silhouette.png" />
   <text id="mySteps" />
-  <!-- <image x="120" y="77%" width="25" height="25" href="images/stairs.png" />
-  <text id="myStairs" /> -->
-  <!-- <image x="50%+5" y="225" width="20" height="30" href="images/purepulse-calorie.png" /> -->
   <image x="50%+5" y="225" width="20" height="30" href="images/dist.png" />
-  <text id="myCals" />
+  <text id="myDist" />
   <image x="100%-64" y="225" width="30" height="30" href="images/Twemoji.png" />
   <text id="myHR" />
 /*  Changed width here to get rid of the gradient on the BG stuff, was 348 px. */
@@ -45,7 +42,7 @@
   <arc x="100%-76" y="64%" width="50" height="50" fill="#333344" arc-width="2" start-angle="0" sweep-angle="360" />
 
   <arc id="stepsArc" x="40" y="64%" width="50" height="50" fill="#4edcfb" arc-width="2" start-angle="0" sweep-angle="0" />
-  <arc id="calsArc" x="50%-10" y="64%" width="50" height="50" fill="#ff882c" arc-width="2" start-angle="0" sweep-angle="0" />
+  <arc id="distArc" x="50%-10" y="64%" width="50" height="50" fill="#ff882c" arc-width="2" start-angle="0" sweep-angle="0" />
   <arc id="hrtArc" x="100%-72" y="64%" width="50" height="50" fill="#c00000" arc-width="2" start-angle="0" sweep-angle="0" />
 
 </svg>
