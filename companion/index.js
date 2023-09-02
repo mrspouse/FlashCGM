@@ -23,6 +23,7 @@ var dataSource;
 var dataToken;
 var dataUrl;
 var dataUrl2;
+var reservoir;
 var settingsUrl;
 var lastSettingsUpdate = 0;
 var dateFormat = JSON.stringify(settingsStorage.getItem("dateFormat"));
@@ -59,6 +60,33 @@ const dataPoll = () => {
   }
 
   console.log('Open Data API CONNECTION');
+
+  if (dataUrl2) {
+    console.log(dataUrl2);
+    fetch(dataUrl2, {
+      method: 'GET',
+      mode: 'cors',
+      headers: new Headers({
+        "Content-Type": 'application/json; charset=utf-8'
+      })
+    })
+    .then(response => {
+      response.text().then(data => {
+        console.log('fetched Device Status from API');
+        let obj = JSON.parse(data);
+        if (obj[0].pump.reservoir_display_override) {
+          reservoir = obj[0].pump.reservoir_display_override + "U";
+        } else {  
+          reservoir = obj[0].pump.reservoir + "U";
+        } 
+        console.log("Reservoir " + reservoir);
+      })
+            .catch(responseParsingError => {
+          });
+      }).catch(fetchError => {
+      })
+  }
+
   if (dataUrl) {
     dataUrl = dataUrl + "?count=48&brief_mode=Y";
     console.log(dataUrl);
@@ -89,41 +117,7 @@ const dataPoll = () => {
         // console.log(fetchError.message);
         // console.log(fetchError.toString());
         // console.log(fetchError.stack);
-      })
-
-      if (dataUrl2) {
-        console.log(dataUrl2);
-        fetch(dataUrl2, {
-          method: 'GET',
-          mode: 'cors',
-          headers: new Headers({
-            "Content-Type": 'application/json; charset=utf-8'
-          })
-        })
-        .then(response => {
-          response.text().then(data => {
-            console.log('fetched Device Status from API');
-            let obj = JSON.parse(data);
-            let reservoir = obj[0].pump.reservoir_display_override + "U";
-            console.log("Reservoir " + reservoir);
-            // let returnval = buildGraphData(data);
-          })
-                .catch(responseParsingError => {
-                // console.log("Response parsing error in data!");
-                // console.log(responseParsingError.name);
-                // console.log(responseParsingError.message);
-                // console.log(responseParsingError.toString());
-                // console.log(responseParsingError.stack);
-              });
-          }).catch(fetchError => {
-            // console.log("Fetch Error in data!");
-            // console.log(fetchError.name);
-            // console.log(fetchError.message);
-            // console.log(fetchError.toString());
-            // console.log(fetchError.stack);
-          })
-      }
-              
+      })              
     } else {
     console.log('no url stored in settings to use to get data.');
   }

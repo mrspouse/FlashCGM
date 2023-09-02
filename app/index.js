@@ -1,31 +1,3 @@
-/*
-MIT License
-
-Copyright (c) 2017 Fitbit, Inc, Sammy Barkowski
-API Fetching base code and Vibe/Alert code Copyright (c) 2018 rytiggy
-CGM component integration code Copyright (c) 2022 PedanticAvenger
-CGM Graphing component code Copyright (c) 2018 NiVZ
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
-*/
-
 import clock from "clock";
 import document from "document";
 import device from "device";
@@ -33,6 +5,7 @@ import { Barometer } from "barometer";
 import { HeartRateSensor } from "heart-rate";
 import { locale } from "user-settings";
 import { preferences } from "user-settings";
+import { units } from "user-settings";
 import * as messaging from "messaging";
 import * as fs from "fs";
 import * as util from "../common/utils";
@@ -69,8 +42,8 @@ let backgdcol = json_themeread.backg || "#f8fcf8";
 let foregdcol = json_themeread.foreg || "#707070";
 
 // Get Goals to reach
-const distanceGoal = goals.distance;
-const caloriesGoal = goals["calories"];
+// const caloriesGoal = goals["calories"];
+const distanceGoal = util.getDistance(goals.distance, units.distance).lbl;
 const stepsGoal = goals.steps;
 const elevationGoal = goals.elevationGain;
 
@@ -207,7 +180,8 @@ function updateStats() {
   const metricSteps = "steps";  // distance, calories, elevationGain, activeMinutes
   const amountSteps = today.adjusted[metricSteps] || 0; 
   const metricCals = "calories";  // distance, calories, elevationGain, activeMinutes
-  const amountCals = today.adjusted[metricCals] || 0;
+  // const amountCals = today.adjusted[metricCals] || 0;
+  const amountCals = util.getDistance(today.adjusted.distance, units.distance).lbl;
   // if (Barometer) {
   //   //console.log("This device has a Barometer!");
   //   const metricElevation = "elevationGain";
@@ -227,7 +201,7 @@ function updateStats() {
   }
   stepRing.sweepAngle = stepAngle;
   dailycals.text = calString;
-  let calAngle = Math.floor(360 * (amountCals / caloriesGoal));
+  let calAngle = Math.floor(360 * (amountCals / distanceGoal));
   if (calAngle > 360) {
     calAngle = 360;
     calRing.fill = "#58e078";

@@ -85,3 +85,16 @@ export var weekday = {
 export function stripQuotes(str) {
   return str ? str.replace(/"/g, "") : "";
 }
+
+export function getDistance(dist,units) {
+  let val = (dist || 0) / 1000;
+  let u = " km";
+  if(units === "us") {
+    val *= 0.621371;
+    u = " mi";
+  }
+  return {
+    // lbl:`${val.toFixed(1)}${u}`
+    lbl:`${val.toFixed(1)}`
+  }
+}

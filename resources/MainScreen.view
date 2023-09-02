@@ -22,7 +22,8 @@
   <text id="mySteps" />
   <!-- <image x="120" y="77%" width="25" height="25" href="images/stairs.png" />
   <text id="myStairs" /> -->
-  <image x="50%+5" y="225" width="20" height="30" href="images/purepulse-calorie.png" />
+  <!-- <image x="50%+5" y="225" width="20" height="30" href="images/purepulse-calorie.png" /> -->
+  <image x="50%+5" y="225" width="20" height="30" href="images/dist.png" />
   <text id="myCals" />
   <image x="100%-64" y="225" width="30" height="30" href="images/Twemoji.png" />
   <text id="myHR" />
