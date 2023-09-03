@@ -224,7 +224,8 @@ function buildGraphData(data) {
       "graphData": flippedPoints,
       "lastPollTime": lastTimestamp,
       "currentTrend": bgTrend,
-      "delta": bgdelta
+      "delta": bgdelta,
+      "reservoir": reservoir
       }
   };
   console.log(JSON.stringify(messageContent));

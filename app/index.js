@@ -61,6 +61,7 @@ var dateFormat;
 let dailysteps = document.getElementById("mySteps");
 let dailydist = document.getElementById("myDist");
 let currentheart = document.getElementById("myHR");
+let insulinRemaining = document.getElementById("myInsulin");
 let heartRing = document.getElementById("hrtArc");
 let stepRing = document.getElementById("stepsArc");
 let distRing = document.getElementById("distArc");
@@ -170,6 +171,7 @@ function applyTheme(background, foreground) {
   // dailystairs.style.fill = background;
   dailydist.style.fill = background;
   heart.style.fill = background;
+  insulinRemaining.style.fill = background;
   myDate.style.fill = foreground;
   upperLine.style.fill = foreground;
   bottomLine.style.fill = foreground;
@@ -205,6 +207,8 @@ function updateStats() {
     distRing.fill = "#58e078";
   }
   distRing.sweepAngle = distAngle;
+
+  insulinRemaining.text = '50+';
   
   if (batteryStats.get().chargestatus == true) {
     myBatteryLevel.text = "Charging";
@@ -511,6 +515,8 @@ function updateBGPollingStatus() {
   }
   myMissedBGPollCounter.text = newMissedCounter;
 }
+
+
 
 function updateSettings(data) {
   // console.log("Whatsettings:" + JSON.stringify(data));

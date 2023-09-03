@@ -169,6 +169,16 @@
   fill: #f8fcf8;
 }
 
+#myInsulin {
+  font-size: 28;
+  font-family: System-Regular;
+  text-length: 80;
+  text-anchor: start;
+  x: 72%;
+  y: 87%;
+  fill: #f8fcf8;
+}
+
 #sensor-data {
   font-family: System-Light;
   fill: white;
