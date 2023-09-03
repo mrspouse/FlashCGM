@@ -24,7 +24,7 @@
   <text id="myDist" />
   <image x="50%-10" y="225" width="30" height="30" href="images/heart.png" />
   <text id="myHR" />
-  <image x="72%" y="220" width="40" height="40" href="images/syringe.png" />
+  <image x="72%" y="225" width="40" height="40" href="images/syringe.png" />
   <text id="myInsulin" />
 
   <arc x="49" y="64%" width="50" height="50" fill="#333344" arc-width="2" start-angle="0" sweep-angle="0" />

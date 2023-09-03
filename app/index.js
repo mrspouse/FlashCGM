@@ -126,6 +126,7 @@ let myBGUnits = document.getElementById("myBGUnits");
 let myBGPollCounterLabel1 = document.getElementById("myBGPollCounterLabel1");
 let myMissedBGPollCounter = document.getElementById("myMissedBGPollCounter");
 let myBGTrend = document.getElementById("myBGTrend");
+let myInsulin = document.getElementById("myInsulin");
 let bgCount = 48;
 let docGraph = document.getElementById("docGraph");
 let myGraph = new Graph(docGraph);
@@ -208,8 +209,6 @@ function updateStats() {
   }
   distRing.sweepAngle = distAngle;
 
-  insulinRemaining.text = '50+';
-  
   if (batteryStats.get().chargestatus == true) {
     myBatteryLevel.text = "Charging";
     myBattery.width = 0;
@@ -368,9 +367,15 @@ function updategraph(data) {
   var points = data.bgdata.graphData;
   var trend = data.bgdata.currentTrend;
   var delta = data.bgdata.delta;
+  var reservoir = data.bgdata.reservoir;
   var lastPollTime = data.bgdata.lastPollTime;
   lastReadingTimestamp = data.bgdata.lastPollTime;
   console.log("Delta1: " + delta + " p47=" + points[47] + " p46=" + points[46] + " " + myDelta.text);
+
+  myInsulin.text = reservoir;
+  if (Math.abs(reservoir) <= 20) { myInsulin.style.fill = "red"; }
+  else if ((Math.abs(reservoir) > 20) && (Math.abs(reservoir) <= 75)) { myInsulin.style.fill = "yellow"; }
+  else { myInsulin.style.fill = "fb-green"; }
 
   // Check to see if we have a reading or a missed reading and update display appropriately
   // Also triger an alert if we are outside of target range.

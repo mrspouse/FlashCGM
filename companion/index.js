@@ -75,9 +75,9 @@ const dataPoll = () => {
         console.log('fetched Device Status from API');
         let obj = JSON.parse(data);
         if (obj[0].pump.reservoir_display_override) {
-          reservoir = obj[0].pump.reservoir_display_override + "U";
+          reservoir = obj[0].pump.reservoir_display_override;
         } else {  
-          reservoir = obj[0].pump.reservoir + "U";
+          reservoir = obj[0].pump.reservoir;
         } 
         console.log("Reservoir " + reservoir);
       })

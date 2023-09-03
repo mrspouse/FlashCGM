@@ -173,8 +173,8 @@
   font-size: 28;
   font-family: System-Regular;
   text-length: 80;
-  text-anchor: start;
-  x: 72%;
+  text-anchor: middle;
+  x: 72%+22;
   y: 87%;
   fill: #f8fcf8;
 }
