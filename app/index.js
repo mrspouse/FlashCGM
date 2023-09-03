@@ -218,7 +218,6 @@ function updateStats() {
 // Reset rings to zero to hide them
 stepRing.sweepAngle = 0;
 distRing.sweepAngle = 0;
-heartRing.sweepAngle = 0;
 }
 
 var hrm = new HeartRateSensor();

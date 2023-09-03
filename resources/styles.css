@@ -132,9 +132,9 @@
   font-size: 28;
   font-family: System-Regular;
   text-length: 80;
-  text-anchor: middle;
-  x: 72;
-  y: 87%;
+  text-anchor: start;
+  x: 55;
+  y: 249;
   fill: #f8fcf8;
 }
 
@@ -153,8 +153,8 @@
   font-size: 28;
   font-family: System-Regular;
   text-length: 80;
-  text-anchor: middle;
-  x: 50%+14;
+  text-anchor: start;
+  x: 55;
   y: 87%;
   fill: #f8fcf8;
 }
@@ -164,7 +164,7 @@
   font-family: System-Regular;
   text-length: 10;
   text-anchor: middle;
-  x: 100%-47;
+  x: 50%+5;
   y: 87%;
   fill: #f8fcf8;
 }
