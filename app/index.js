@@ -392,8 +392,8 @@ function updategraph(data) {
   }
 
   myPod.text = '--';
-  if (util.dhm(pod_age) != 'NaNdNaNh') {
-    myPod.text = util.dhm(pod_age);
+  if (pod_age != undefined) {
+    myPod.text = pod_age;
     console.log("Pod age " + myPod.text);
   }
 

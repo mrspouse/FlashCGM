@@ -1,6 +1,7 @@
 import { settingsStorage } from "settings";
 import * as messaging from "messaging";
 import { me } from "companion";
+import * as util from "../common/utils";
 
 //let bgDataType = JSON.parse(settingsStorage.getItem("dataType"));
 var bgDataType = "mg/dl";
@@ -110,7 +111,7 @@ const dataPoll = () => {
         // } else {  
         let sitechange = new Date(obj[0].created_at).getTime();
         let currentDate = new Date(Date.now()).getTime();
-        pod_age = currentDate - sitechange;
+        pod_age = util.dhm(currentDate - sitechange);
         // } 
         console.log("sitechange " + sitechange);
         console.log("currentDate " + currentDate);
