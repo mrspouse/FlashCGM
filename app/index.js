@@ -62,6 +62,7 @@ let dailysteps = document.getElementById("mySteps");
 let dailydist = document.getElementById("myDist");
 let currentheart = document.getElementById("myHR");
 let insulinRemaining = document.getElementById("myInsulin");
+let PodAge = document.getElementById("myPod");
 let heartRing = document.getElementById("hrtArc");
 let stepRing = document.getElementById("stepsArc");
 let distRing = document.getElementById("distArc");
@@ -127,6 +128,7 @@ let myBGPollCounterLabel1 = document.getElementById("myBGPollCounterLabel1");
 let myMissedBGPollCounter = document.getElementById("myMissedBGPollCounter");
 let myBGTrend = document.getElementById("myBGTrend");
 let myInsulin = document.getElementById("myInsulin");
+let myPod = document.getElementById("myPod");
 let bgCount = 48;
 let docGraph = document.getElementById("docGraph");
 let myGraph = new Graph(docGraph);
@@ -368,14 +370,18 @@ function updategraph(data) {
   var trend = data.bgdata.currentTrend;
   var delta = data.bgdata.delta;
   var reservoir = data.bgdata.reservoir;
+  var pod_age = data.bgdata.pod_age;
   var lastPollTime = data.bgdata.lastPollTime;
   lastReadingTimestamp = data.bgdata.lastPollTime;
   console.log("Delta1: " + delta + " p47=" + points[47] + " p46=" + points[46] + " " + myDelta.text);
-
+  
   myInsulin.text = reservoir;
   if (Math.abs(reservoir) <= 20) { myInsulin.style.fill = "red"; }
   else if ((Math.abs(reservoir) > 20) && (Math.abs(reservoir) <= 75)) { myInsulin.style.fill = "yellow"; }
   else { myInsulin.style.fill = "fb-green"; }
+
+  myPod.text = util.dhm(pod_age);
+  console.log("Pod age " + myPod.text);
 
   // Check to see if we have a reading or a missed reading and update display appropriately
   // Also triger an alert if we are outside of target range.
@@ -520,8 +526,6 @@ function updateBGPollingStatus() {
   }
   myMissedBGPollCounter.text = newMissedCounter;
 }
-
-
 
 function updateSettings(data) {
   // console.log("Whatsettings:" + JSON.stringify(data));

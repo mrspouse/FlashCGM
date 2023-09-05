@@ -24,6 +24,9 @@ var dataToken;
 var dataUrl;
 var dataUrl2;
 var reservoir;
+var dataUrl3;
+var pod_age;
+var pumpAge;
 var settingsUrl;
 var lastSettingsUpdate = 0;
 var dateFormat = JSON.stringify(settingsStorage.getItem("dateFormat"));
@@ -46,6 +49,8 @@ const dataPoll = () => {
     // dataUrl = dataUrl + "&token=" + dataToken;
     dataUrl2 = JSON.parse(settingsStorage.getItem("dataSourceURL")).name 
     + "/API/v1/devicestatus?count=1";
+    dataUrl3 = JSON.parse(settingsStorage.getItem("dataSourceURL")).name 
+    + "/API/v1/treatments.json?find[eventType]=Site+Change&count=1";
   } else {
     dataSource = JSON.parse(settingsStorage.getItem("dataSource")).name;
     if (dataSource == "xdrip") {
@@ -84,6 +89,33 @@ const dataPoll = () => {
             .catch(responseParsingError => {
           });
       }).catch(fetchError => {
+      })
+  }
+
+  if (dataUrl3) {
+    console.log(dataUrl3);
+    fetch(dataUrl3, {
+      method: 'GET',
+      mode: 'cors',
+      headers: new Headers({
+        "Content-Type": 'application/json; charset=utf-8'
+      })
+    })
+    .then(response => {
+      response.text().then(data => {
+        console.log('fetched Site Change from API');
+        let obj = JSON.parse(data);
+        // if (obj[0].pump.reservoir_display_override) {
+        //   reservoir = obj[0].pump.reservoir_display_override;
+        // } else {  
+        let sitechange = new Date(obj[0].created_at).getTime();
+        let currentDate = new Date(Date.now()).getTime();
+        pod_age = currentDate - sitechange;
+        // } 
+        console.log("sitechange " + sitechange);
+        console.log("currentDate " + currentDate);
+        console.log("age " + pod_age);
+      })        
       })
   }
 
@@ -225,7 +257,8 @@ function buildGraphData(data) {
       "lastPollTime": lastTimestamp,
       "currentTrend": bgTrend,
       "delta": bgdelta,
-      "reservoir": reservoir
+      "reservoir": reservoir,
+      "pod_age": pod_age
       }
   };
   console.log(JSON.stringify(messageContent));
