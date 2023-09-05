@@ -375,13 +375,27 @@ function updategraph(data) {
   lastReadingTimestamp = data.bgdata.lastPollTime;
   console.log("Delta1: " + delta + " p47=" + points[47] + " p46=" + points[46] + " " + myDelta.text);
   
-  myInsulin.text = reservoir;
-  if (Math.abs(reservoir) <= 20) { myInsulin.style.fill = "red"; }
-  else if ((Math.abs(reservoir) > 20) && (Math.abs(reservoir) <= 75)) { myInsulin.style.fill = "yellow"; }
-  else { myInsulin.style.fill = "fb-green"; }
+  myInsulin.text = '--';
+  if (reservoir != undefined) { 
+    if (Math.abs(reservoir) <= 20) { 
+      myInsulin.text = reservoir + 'U';
+      myInsulin.style.fill = "red"; 
+    }
+    else if ((Math.abs(reservoir) > 20) && (Math.abs(reservoir) <= 75)) { 
+      myInsulin.text = reservoir + 'U';
+      myInsulin.style.fill = "yellow"; 
+    }
+    else { 
+      myInsulin.text = reservoir;    
+      myInsulin.style.fill = "fb-green"; 
+    }
+  }
 
-  myPod.text = util.dhm(pod_age);
-  console.log("Pod age " + myPod.text);
+  myPod.text = '--';
+  if (util.dhm(pod_age) != 'NaNdNaNh') {
+    myPod.text = util.dhm(pod_age);
+    console.log("Pod age " + myPod.text);
+  }
 
   // Check to see if we have a reading or a missed reading and update display appropriately
   // Also triger an alert if we are outside of target range.
