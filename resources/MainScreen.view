@@ -2,7 +2,7 @@
   <rect class="battery" id="batteryBar" />
   <image class="batteryBorder" href="images/battery.png" fill="white" />
   <text class="battery" id="batteryPercent">xx</text>
-  <text id="myLabel" />
+  <text id="myClock" />
   <text id="myWeather" />
 /*  Add the BG stuff to the display */
   <line id="upperVert" x1="63%" y1="4%" x2="63%" y2="90%" fill="#333333" stroke-width="2" />

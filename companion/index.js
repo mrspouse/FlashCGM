@@ -1,6 +1,7 @@
 import { settingsStorage } from "settings";
 import * as messaging from "messaging";
 import { me } from "companion";
+import { weather, WeatherCondition } from "weather";
 import * as util from "../common/utils";
 
 //let bgDataType = JSON.parse(settingsStorage.getItem("dataType"));
@@ -28,6 +29,7 @@ var reservoir;
 var dataUrl3;
 var pod_age;
 var pumpAge;
+var temperature;
 var settingsUrl;
 var lastSettingsUpdate = 0;
 var dateFormat = JSON.stringify(settingsStorage.getItem("dateFormat"));
@@ -158,6 +160,36 @@ const dataPoll = () => {
   return true;
 };
 
+/////////////
+// Weather //
+/////////////
+
+if (me.permissions.granted("access_location")) {
+  weather
+    .getWeatherData()
+    .then((data) => {
+      if (data.locations.length > 0) {
+        const temp = Math.floor(data.locations[0].currentWeather.temperature);
+        const cond = util.findWeatherConditionName(WeatherCondition, data.locations[0].currentWeather.weatherCondition);
+        const loc = data.locations[0].name;
+        const unit = data.temperatureUnit;
+        console.log(`It's ${temp}\u00B0 ${unit} and ${cond} in ${loc}`);
+
+        temperature = `${temp}\u00B0`;
+
+        // temperature: Math.floor(data.locations[0].currentWeather.temperature),
+        // condition: findWeatherConditionName(WeatherCondition, data.locations[0].currentWeather.weatherCondition),
+        // conditionCode: data.locations[0].currentWeather.weatherCondition,
+        // location: data.locations[0].name,
+        // unit: data.temperatureUnit
+
+      }
+    })
+    .catch((ex) => {
+      console.error(ex);
+    });
+}
+
 function buildSettings() {
   // Need to setup High line, Low Line, Units, Snooze.
   console.log("buildSettings() called");
@@ -259,7 +291,8 @@ function buildGraphData(data) {
       "currentTrend": bgTrend,
       "delta": bgdelta,
       "reservoir": reservoir,
-      "pod_age": pod_age
+      "pod_age": pod_age,
+      "temperature": temperature
       }
   };
   console.log(JSON.stringify(messageContent));

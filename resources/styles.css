@@ -35,7 +35,7 @@
   fill: fb-magenta;
 }
 
-#myLabel {
+#myClock {
   font-size: 78;
   font-weight: bold;
   font-family: Colfax-Light;
@@ -61,8 +61,8 @@
   font-family: Colfax-Regular;
   text-length: 8;
   text-anchor: end;
-  x: 22%;
-  y: 12%;
+  x: 25%;
+  y: 11%;
   fill: yellow;
 }
 
@@ -70,8 +70,8 @@
   font-size: 30;
   font-family: Colfax-Regular;
   text-length: 8;
-  text-anchor: start;
-  x: 65%;
+  text-anchor: middle;
+  x: 80%;
   y: 12%;
   fill: grey;
 }
@@ -95,7 +95,6 @@
   y: 40%;
   fill: orangered;
 }
-
 
 #myBGUpdateTime {
   font-size: 25;

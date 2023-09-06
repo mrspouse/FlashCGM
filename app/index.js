@@ -14,24 +14,22 @@ import Graph from "../common/graph";
 import BatteryStats from "../common/batteryinfo";
 import { goals } from "user-activity";
 import { today } from "user-activity";
-import * as weather from "./weather";
-import { toFahrenheit } from "../common/utils";
 
 if (!device.screen) device.screen = { width: 348, height: 250 };
 
 const myWeather = document.getElementById("myWeather");
 
-weather.initialize(data => {
-  // fresh weather file received
+// weather.initialize(data => {
+//   // fresh weather file received
 
-  // If the user-settings temperature == F and the result data.unit == Celsius then we convert to Fahrenheit
-  // Use this only if you use getWeatherData() function without the optional parameter.
-  data = units.temperature === "F" ? toFahrenheit(data): data;
+//   // If the user-settings temperature == F and the result data.unit == Celsius then we convert to Fahrenheit
+//   // Use this only if you use getWeatherData() function without the optional parameter.
+//   data = units.temperature === "F" ? toFahrenheit(data): data;
 
-  console.log(`It's ${data.temperature}\u00B0 ${data.unit} and ${data.condition} in ${data.location}`);
-  myWeather.text = `${data.temperature}\u00B0`;
-  // clock.tick();
-});
+//   console.log(`It's ${data.temperature}\u00B0 ${data.unit} and ${data.condition} in ${data.location}`);
+//   myWeather.text = `${data.temperature}\u00B0`;
+//   // clock.tick();
+// });
 
 
 //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -63,7 +61,7 @@ const stepsGoal = goals.steps;
 const elevationGoal = goals.elevationGain;
 
 // Get a handle on the <text> element
-let myClock = document.getElementById("myLabel");
+let myClock = document.getElementById("myClock");
 let myDate = document.getElementById("myDate");
 var batteryitems = document.getElementsByClassName('battery');
 for (var i = 0; i < batteryitems.length; i++) {
@@ -387,32 +385,8 @@ function updategraph(data) {
   var delta = data.bgdata.delta;
   var reservoir = data.bgdata.reservoir;
   var pod_age = data.bgdata.pod_age;
+  var temperature = data.bgdata.temperature;
   var lastPollTime = data.bgdata.lastPollTime;
-  lastReadingTimestamp = data.bgdata.lastPollTime;
-  console.log("Delta1: " + delta + " p47=" + points[47] + " p46=" + points[46] + " " + myDelta.text);
-  
-  myInsulin.text = '--';
-  if (reservoir != undefined) { 
-    if (Math.abs(reservoir) <= 20) { 
-      myInsulin.text = reservoir + 'U';
-      myInsulin.style.fill = "red"; 
-    }
-    else if ((Math.abs(reservoir) > 20) && (Math.abs(reservoir) <= 75)) { 
-      myInsulin.text = reservoir + 'U';
-      myInsulin.style.fill = "yellow"; 
-    }
-    else { 
-      myInsulin.text = reservoir;    
-      myInsulin.style.fill = "fb-green"; 
-    }
-  }
-
-  myPod.text = '--';
-  if (pod_age != undefined) {
-    myPod.text = pod_age;
-    console.log("Pod age " + myPod.text);
-  }
-
   // Check to see if we have a reading or a missed reading and update display appropriately
   // Also triger an alert if we are outside of target range.
   if (points[47] != undefined) {
@@ -453,7 +427,7 @@ function updategraph(data) {
         } else if (prefBgUnits === "mmol") {
           delta = mmol(delta);
           myDelta.text = "\u2206" + delta;
-}
+        }
         if (Math.abs(delta) < 9) { myDelta.style.fill = "fb-green"; }
         else if ((Math.abs(delta) >= 9) && (Math.abs(delta) < 18)) { myDelta.style.fill = "yellow"; }
         else { myDelta.style.fill = "red"; }
@@ -485,6 +459,9 @@ function updategraph(data) {
     }
   }
 
+  lastReadingTimestamp = data.bgdata.lastPollTime;
+  console.log("Delta1: " + delta + " p47=" + points[47] + " p46=" + points[46] + " " + myDelta.text);
+  
   // Update the trend arrow based on the data poll
   let newFill = "#008600";
   if (trend === "DoubleUp" || trend === "DoubleDown") {
@@ -541,6 +518,36 @@ function updategraph(data) {
   }
   // console.log("GraphValues: "+ datavalues);
   myGraph.update(datavalues);
+
+  // import other data 
+  myInsulin.text = '--';
+  if (reservoir != undefined) { 
+    if (Math.abs(reservoir) <= 20) { 
+      myInsulin.text = reservoir + 'U';
+      myInsulin.style.fill = "red"; 
+    }
+    else if ((Math.abs(reservoir) > 20) && (Math.abs(reservoir) <= 75)) { 
+      myInsulin.text = reservoir + 'U';
+      myInsulin.style.fill = "yellow"; 
+    }
+    else { 
+      myInsulin.text = reservoir;    
+      myInsulin.style.fill = "fb-green"; 
+    }
+  }
+
+  myPod.text = '--';
+  if (pod_age != undefined) {
+    myPod.text = pod_age;
+    console.log("Pod age " + myPod.text);
+  }
+
+  myWeather.text = '--';
+  if (temperature != undefined) {
+    myWeather.text = temperature;
+    console.log("Temp  " + myWeather.text);
+  }
+
 }
 
 function updateBGPollingStatus() {
