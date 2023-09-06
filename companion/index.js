@@ -156,13 +156,15 @@ const dataPoll = () => {
     } else {
     console.log('no url stored in settings to use to get data.');
   }
-
+  updateWeather();
   return true;
 };
 
-/////////////
-// Weather //
-/////////////
+//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+//
+// Weather
+//
+//XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 function updateWeather() {
   if (me.permissions.granted("access_location")) {
@@ -177,13 +179,6 @@ function updateWeather() {
           console.log(`It's ${temp}\u00B0 ${unit} and ${cond} in ${loc}`);
 
           temperature = `${temp}\u00B0`;
-
-          // temperature: Math.floor(data.locations[0].currentWeather.temperature),
-          // condition: findWeatherConditionName(WeatherCondition, data.locations[0].currentWeather.weatherCondition),
-          // conditionCode: data.locations[0].currentWeather.weatherCondition,
-          // location: data.locations[0].name,
-          // unit: data.temperatureUnit
-
         }
       })
       .catch((ex) => {

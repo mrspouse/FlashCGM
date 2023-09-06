@@ -435,11 +435,13 @@ function updategraph(data) {
       myCurrentBG.text = points[points.findIndex(findValid)];
       myCurrentBG.style.fill = "grey";
       myDelta.style.fill = "grey";
+      myWeather.style.fill = "grey";
       myDelta.text = "stale";
     } else if (prefBgUnits === "mmol") {
       myCurrentBG.text = mmol(points[points.findIndex(findValid)]);
       myCurrentBG.style.fill = "grey";
       myDelta.style.fill = "grey";
+      myWeather.style.fill = "grey";
       myDelta.text = "stale";
     }
   }
@@ -626,7 +628,6 @@ messaging.peerSocket.onmessage = function (evt) {
     fs.writeFileSync("theme.txt", json_theme, "json");
   }
 }
-
 
 //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 //

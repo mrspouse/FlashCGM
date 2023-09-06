@@ -63,7 +63,7 @@
   text-anchor: end;
   x: 25%;
   y: 11%;
-  fill: yellow;
+  fill: #f8fcf8;
 }
 
 #myDelta {
@@ -183,8 +183,8 @@
   font-family: System-Regular;
   text-length: 80;
   text-anchor: start;
-  x: 67%+45;
-  y: 248;
+  x: 67%+43;
+  y: 249;
   fill: #f8fcf8;
 }
 
