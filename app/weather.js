@@ -9,7 +9,7 @@ let handleCallback;
 export function initialize(callback) {
   handleCallback = callback;
   data = loadData();
-  inbox.addEventListener("newfile", fileHandler);
+  inbox.addEventListener("weather", fileHandler);
   fileHandler();
   updatedData();
 }
