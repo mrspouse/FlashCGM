@@ -60,9 +60,9 @@
   font-size: 25;
   font-family: Colfax-Regular;
   text-length: 8;
-  text-anchor: start;
-  x: 9;
-  y:12%;
+  text-anchor: end;
+  x: 22%;
+  y: 12%;
   fill: yellow;
 }
 
@@ -72,7 +72,7 @@
   text-length: 8;
   text-anchor: start;
   x: 65%;
-  y:12%;
+  y: 12%;
   fill: grey;
 }
 
