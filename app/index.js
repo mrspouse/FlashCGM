@@ -19,19 +19,6 @@ if (!device.screen) device.screen = { width: 348, height: 250 };
 
 const myWeather = document.getElementById("myWeather");
 
-// weather.initialize(data => {
-//   // fresh weather file received
-
-//   // If the user-settings temperature == F and the result data.unit == Celsius then we convert to Fahrenheit
-//   // Use this only if you use getWeatherData() function without the optional parameter.
-//   data = units.temperature === "F" ? toFahrenheit(data): data;
-
-//   console.log(`It's ${data.temperature}\u00B0 ${data.unit} and ${data.condition} in ${data.location}`);
-//   myWeather.text = `${data.temperature}\u00B0`;
-//   // clock.tick();
-// });
-
-
 //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 //
 // Clock/Sensor related defines
@@ -317,8 +304,6 @@ clock.ontick = () => updateClock();
 applyTheme(backgdcol, foregdcol);
 updateClock();
 updateBGPollingStatus();
-
-
 
 //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 //

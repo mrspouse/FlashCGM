@@ -164,30 +164,32 @@ const dataPoll = () => {
 // Weather //
 /////////////
 
-if (me.permissions.granted("access_location")) {
-  weather
-    .getWeatherData()
-    .then((data) => {
-      if (data.locations.length > 0) {
-        const temp = Math.floor(data.locations[0].currentWeather.temperature);
-        const cond = util.findWeatherConditionName(WeatherCondition, data.locations[0].currentWeather.weatherCondition);
-        const loc = data.locations[0].name;
-        const unit = data.temperatureUnit;
-        console.log(`It's ${temp}\u00B0 ${unit} and ${cond} in ${loc}`);
+function updateWeather() {
+  if (me.permissions.granted("access_location")) {
+    weather
+      .getWeatherData()
+      .then((data) => {
+        if (data.locations.length > 0) {
+          const temp = Math.floor(data.locations[0].currentWeather.temperature);
+          const cond = util.findWeatherConditionName(WeatherCondition, data.locations[0].currentWeather.weatherCondition);
+          const loc = data.locations[0].name;
+          const unit = data.temperatureUnit;
+          console.log(`It's ${temp}\u00B0 ${unit} and ${cond} in ${loc}`);
 
-        temperature = `${temp}\u00B0`;
+          temperature = `${temp}\u00B0`;
 
-        // temperature: Math.floor(data.locations[0].currentWeather.temperature),
-        // condition: findWeatherConditionName(WeatherCondition, data.locations[0].currentWeather.weatherCondition),
-        // conditionCode: data.locations[0].currentWeather.weatherCondition,
-        // location: data.locations[0].name,
-        // unit: data.temperatureUnit
+          // temperature: Math.floor(data.locations[0].currentWeather.temperature),
+          // condition: findWeatherConditionName(WeatherCondition, data.locations[0].currentWeather.weatherCondition),
+          // conditionCode: data.locations[0].currentWeather.weatherCondition,
+          // location: data.locations[0].name,
+          // unit: data.temperatureUnit
 
-      }
-    })
-    .catch((ex) => {
-      console.error(ex);
-    });
+        }
+      })
+      .catch((ex) => {
+        console.error(ex);
+      });
+  }
 }
 
 function buildSettings() {
