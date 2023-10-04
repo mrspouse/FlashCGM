@@ -107,6 +107,7 @@ const dataPoll = () => {
     .then(response => {
       response.text().then(data => {
         console.log('fetched Site Change from API');
+        // console.log(data);
         let obj = JSON.parse(data);
         // if (obj[0].pump.reservoir_display_override) {
         //   reservoir = obj[0].pump.reservoir_display_override;

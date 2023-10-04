@@ -41,7 +41,7 @@
   font-family: Colfax-Light;
   text-length: 80;
   text-anchor: middle;
-  x: 32%;
+  x: 30%;
   y: 35%;
   fill: #f8fcf8;
 }
@@ -208,18 +208,18 @@
 #batteryBar {
   width: 30;
   height: 15;
-  fill: white;
   x: 48%;
   y: 7%;
+  fill: white;
 }
 
 #batteryPercent {
   text-length: 10;
-  font-size: 18;
+  font-size: 20;
   text-anchor: end;
-  fill: white;
   x:47%;
   y:11%;
+  fill: #f8fcf8;
 }
 
 .batteryBorder {
