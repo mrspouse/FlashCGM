@@ -217,6 +217,7 @@
   text-length: 10;
   font-size: 18;
   text-anchor: end;
+  fill: white;
   x:47%;
   y:11%;
 }
