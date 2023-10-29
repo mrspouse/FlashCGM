@@ -49,6 +49,7 @@ const elevationGoal = goals.elevationGain;
 
 // Get a handle on the <text> element
 let myClock = document.getElementById("myClock");
+let clockSecs = document.getElementById("clockSecs");
 let myDate = document.getElementById("myDate");
 var batteryitems = document.getElementsByClassName('battery');
 for (var i = 0; i < batteryitems.length; i++) {
@@ -177,7 +178,7 @@ function applyTheme(background, foreground) {
   heart.style.fill = background;
   insulinRemaining.style.fill = background;
   myDate.style.fill = foreground;
-  upperLine.style.fill = foreground;
+  // upperLine.style.fill = foreground;
   bottomLine.style.fill = foreground;
 }
 
@@ -252,6 +253,7 @@ function updateClock() {
   //  let hours = util.zeroPad(util.formatHour(today.getHours(), clockPref));
   let hours = util.formatHour(today.getHours(), clockPref);
   let mins = util.zeroPad(today.getMinutes());
+  let secs = util.zeroPad(today.getSeconds());
   let prefix = lang.substring(0, 2);
   if (typeof util.weekday[prefix] === 'undefined') {
     prefix = 'en';
@@ -264,6 +266,7 @@ function updateClock() {
   }
   let datestring = day + divide + month + divide + year;
   myClock.text = `${hours}:${mins}`;
+  clockSecs.text = `${secs}`;
   if (dateFormat === 'YMD') {
     datestring = year + divide + month + divide + day;
     myDate.text = `${datestring}`;

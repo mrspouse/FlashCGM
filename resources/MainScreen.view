@@ -2,8 +2,9 @@
   <rect class="battery" id="batteryBar" />
   <image class="batteryBorder" href="images/battery.png" fill="white" />
   <text class="battery" id="batteryPercent">xx</text>
-  <text id="myClock" />
   <text id="myWeather" />
+  <text id="myClock" />
+  <text id="clockSecs" />
 /*  Add the BG stuff to the display */
   <line id="upperVert" x1="63%" y1="4%" x2="63%" y2="90%" fill="#333333" stroke-width="2" />
   <text id="myDelta" >&#8710;xx</text>
@@ -15,7 +16,7 @@
   <text id="myBGTrend">x</text> 
   <rect id="button1" pointer-events="all" x="60%" y="0" width="40%" height="57%" opacity="0" />
 /* Modify the width of the upperLine and bottomLine to fit with BG display. */
-  <line id="upperLine" x1="10%" y1="44%" x2="50%" y2="44%" fill="#333333" stroke-width="1" />
+  <!-- <line id="upperLine" x1="10%" y1="44%" x2="50%" y2="44%" fill="#333333" stroke-width="1" /> -->
   <text id="myDate" />
   <line id="bottomLine" x1="4%" y1="60%" x2="96%" y2="60%" fill="#333333" stroke-width="1" />
 

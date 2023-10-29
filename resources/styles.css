@@ -37,13 +37,22 @@
 
 #myClock {
   font-size: 78;
-  font-weight: bold;
   font-family: Colfax-Light;
   text-length: 80;
   text-anchor: middle;
   x: 30%;
   y: 35%;
   fill: #f8fcf8;
+}
+
+#clockSecs {
+  font-size: 25;
+  font-family: Colfax-Regular;
+  text-length: 4;
+  text-anchor: end;
+  x: 30%+20%;
+  y: 45%;
+  fill: #707070;
 }
 
 #myDate {
