@@ -265,7 +265,7 @@ function updateClock() {
     divide = "-"
   }
   let datestring = day + divide + month + divide + year;
-  myClock.text = `${hours}:${mins}`;
+  myClock.text = `${hours} ${mins}`;
   clockSecs.text = `${secs}`;
   if (dateFormat === 'YMD') {
     datestring = year + divide + month + divide + day;
