@@ -37,21 +37,21 @@
 
 #myClock {
   font-size: 64;
-  font-family: Colfax-Light;
+  font-family: FBNucleon-Light;
   text-length: 80;
   text-anchor: end;
   x: 51%;
-  y: 34%;
+  y: 33%;
   fill: #f8fcf8;
 }
 
 #clockSecs {
   font-size: 25;
-  font-family: Colfax-Light;
+  font-family: FBNucleon-Light;
   text-length: 4;
   text-anchor: start;
   x: 52%;
-  y: 34%;
+  y: 33%;
   fill: #f8fcf8;
 }
 
@@ -61,8 +61,8 @@
   text-length: 40;
   text-anchor: middle;
   x: 30%;
-  y: 51%;
-  fill: #707070;
+  y: 50%;
+  fill: #b0afaf;
 }
 
 #myWeather {
