@@ -18,7 +18,7 @@
 /* Modify the width of the upperLine and bottomLine to fit with BG display. */
   <!-- <line id="upperLine" x1="10%" y1="44%" x2="50%" y2="44%" fill="#333333" stroke-width="1" /> -->
   <text id="myDate" />
-  <line id="bottomLine" x1="4%" y1="60%" x2="96%" y2="60%" fill="#333333" stroke-width="1" />
+  <line id="bottomLine" x1="2%" y1="60%" x2="98%" y2="60%" fill="#333333" stroke-width="1" />
 
   <image x="15" y="225" width="30" height="30" href="images/footsteps.png" />
   <text id="mySteps" />

@@ -36,33 +36,33 @@
 }
 
 #myClock {
-  font-size: 64;
-  font-family: FBNucleon-Light;
+  font-size: 68;
+  font-family: System-Light;
   text-length: 80;
   text-anchor: end;
   x: 51%;
-  y: 33%;
+  y: 33%+2;
   fill: #f8fcf8;
 }
 
 #clockSecs {
-  font-size: 25;
-  font-family: FBNucleon-Light;
+  font-size: 28;
+  font-family: System-Light;
   text-length: 4;
   text-anchor: start;
   x: 52%;
-  y: 33%;
+  y: 33%+2;
   fill: #f8fcf8;
 }
 
 #myDate {
-  font-size: 25;
-  font-family: Colfax-Regular;
+  font-size: 28;
+  font-family: System-Regular;
   text-length: 40;
   text-anchor: middle;
-  x: 30%;
+  x: 34%+2;
   y: 50%;
-  fill: #b0afaf;
+  fill: #ffffff;
 }
 
 #myWeather {
