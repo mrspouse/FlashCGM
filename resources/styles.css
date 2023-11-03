@@ -36,12 +36,12 @@
 }
 
 #myClock {
-  font-size: 72;
+  font-size: 76;
   font-family: System-Regular;
   text-length: 80;
   text-anchor: end;
   x: 51%;
-  y: 33%+2;
+  y: 34%+2;
   fill: #f8fcf8;
 }
 
@@ -51,7 +51,7 @@
   text-length: 4;
   text-anchor: start;
   x: 52%;
-  y: 33%+2;
+  y: 34%+2;
   fill: #f8fcf8;
 }
 
@@ -86,12 +86,12 @@
 }
 
 #myCurrentBG {
-  font-size: 65;
+  font-size: 56;
   font-family: System-Regular;
   text-length: 20;
   text-anchor: middle;
   x: 80%;
-  y: 33%;
+  y: 32%;
   fill: orangered;
 }
 
@@ -156,17 +156,6 @@
   fill: #f8fcf8;
 }
 
-/* #myStairs {
-  font-size: 28;
-  font-family: System-Regular;
-  text-length: 30;
-  text-anchor: middle;
-  x: 130;
-  y: 75%;
-  fill: #f8fcf8;
-}
- */
-
 #myDist {
   font-size: 28;
   font-family: System-Regular;
@@ -223,12 +212,13 @@
 }
 
 #batteryPercent {
-  text-length: 10;
-  font-size: 20;
+  font-size: 22;
+  font-family: System-Light;
+  text-length: 4;
   text-anchor: end;
   x:47%;
   y:11%;
-  fill: #f8fcf8;
+  fill: #ffffff;
 }
 
 .batteryBorder {
