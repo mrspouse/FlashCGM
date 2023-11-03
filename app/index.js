@@ -177,7 +177,8 @@ function applyTheme(background, foreground) {
   dailydist.style.fill = background;
   heart.style.fill = background;
   insulinRemaining.style.fill = background;
-  myDate.style.fill = foreground;
+  myDate.style.fill = background;
+  myBatteryLevel.style.fill = background;  
   // upperLine.style.fill = foreground;
   bottomLine.style.fill = foreground;
 }
@@ -265,7 +266,7 @@ function updateClock() {
     divide = "-"
   }
   let datestring = day + divide + month + divide + year;
-  myClock.text = `${hours} ${mins}`;
+  myClock.text = `${hours}&#8202;${mins}`;
   clockSecs.text = `${secs}`;
   if (dateFormat === 'YMD') {
     datestring = year + divide + month + divide + day;

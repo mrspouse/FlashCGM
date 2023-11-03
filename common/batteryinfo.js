@@ -32,8 +32,8 @@ export default class batteryStats {
   get() {
     let level = Math.floor(battery.chargeLevel);
     let chargestatus = charger.connected;
-    let fill = '#3ea843';
-    if (level <= 30 && level >= 15) {
+    let fill = '#f8fcf8';
+    if (level <= 30 && level > 15) {
       fill = 'orange';
     } else if (level <= 15) {
       fill = 'red';
