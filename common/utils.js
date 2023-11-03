@@ -68,7 +68,7 @@ export function hexcolor(colString) {
 export var weekday = {
 	de: ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"],
 	da: ["sø", "ma", "ti", "on", "to", "fr", "lø"],
-	en: ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"],
+	en: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
 	es: ["do", "lu", "ma", "mi", "ju", "vi", "sá"],
 	fr: ["di", "lu", "ma", "me", "je", "ve", "sa"],
 	nl: ["zo", "ma", "di", "wo", "do", "vr", "za"],

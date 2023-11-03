@@ -36,12 +36,12 @@
 }
 
 #myClock {
-  font-size: 78;
+  font-size: 74;
   font-family: System-Regular;
   text-length: 80;
   text-anchor: end;
   x: 51%;
-  y: 34%+4;
+  y: 35%;
   fill: #f8fcf8;
 }
 
@@ -51,7 +51,7 @@
   text-length: 4;
   text-anchor: start;
   x: 52%;
-  y: 34%+4;
+  y: 35%;
   fill: #f8fcf8;
 }
 
@@ -59,10 +59,10 @@
   font-size: 28;
   font-family: System-Regular;
   text-length: 40;
-  text-anchor: middle;
-  x: 34%+2;
-  y: 50%;
-  fill: white;
+  text-anchor: start;
+  x: 4%;
+  y: 52%;
+  fill: gray;
 }
 
 #myWeather {

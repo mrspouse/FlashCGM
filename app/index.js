@@ -177,7 +177,7 @@ function applyTheme(background, foreground) {
   dailydist.style.fill = background;
   heart.style.fill = background;
   insulinRemaining.style.fill = background;
-  myDate.style.fill = background;
+  myDate.style.fill = foreground;
   myBatteryLevel.style.fill = background;  
   // upperLine.style.fill = foreground;
   bottomLine.style.fill = foreground;
@@ -247,7 +247,7 @@ hrm.start();
 function updateClock() {
   let lang = locale.language;
   let today = new Date();
-  let day = util.zeroPad(today.getDate());
+  let day = today.getDate();
   let wday = today.getDay();
   let month = util.zeroPad(today.getMonth() + 1);
   let year = today.getFullYear();
@@ -265,7 +265,24 @@ function updateClock() {
   } else if (prefix == "nl" || prefix == "ko") {
     divide = "-"
   }
-  let datestring = day + divide + month + divide + year;
+
+  var namemonth = new Array();
+  namemonth[0] = "Jan";
+  namemonth[1] = "Feb";
+  namemonth[2] = "Mar";
+  namemonth[3] = "Apr";
+  namemonth[4] = "May";
+  namemonth[5] = "Jun";
+  namemonth[6] = "Jul";
+  namemonth[7] = "Aug";
+  namemonth[8] = "Sep";
+  namemonth[9] = "Oct";
+  namemonth[10] = "Nov";
+  namemonth[11] = "Dec";
+ 
+  month = namemonth[today.getMonth()];
+  let datestring = util.weekday[prefix][wday] + divide + day + divide + month;
+
   myClock.text = `${hours}&#8202;${mins}`;
   clockSecs.text = `${secs}`;
   if (dateFormat === 'YMD') {
@@ -273,21 +290,7 @@ function updateClock() {
     myDate.text = `${datestring}`;
   }
   else if (dateFormat === 'MDY') {
-    var namemonth = new Array();
-    namemonth[0] = "Jan";
-    namemonth[1] = "Feb";
-    namemonth[2] = "Mar";
-    namemonth[3] = "Apr";
-    namemonth[4] = "May";
-    namemonth[5] = "Jun";
-    namemonth[6] = "Jul";
-    namemonth[7] = "Aug";
-    namemonth[8] = "Sep";
-    namemonth[9] = "Oct";
-    namemonth[10] = "Nov";
-    namemonth[11] = "Dec";
-    month = namemonth[today.getMonth()];
-    datestring = month + " " + day + " " + year;
+    datestring = wday + " " + day + " " + month + " " + day + " " + year;
     myDate.text = `${datestring}`;
   }
   else { myDate.text = `${datestring}`; }
