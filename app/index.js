@@ -374,7 +374,7 @@ function setBGColor(bgValue) {
 function updategraph(data) {
   var points = data.bgdata.graphData;
   var trend = data.bgdata.currentTrend;
-  var delta = data.bgdata.delta;
+  var delta = 0;
   var reservoir = data.bgdata.reservoir;
   var pod_age = data.bgdata.pod_age;
   var temperature = data.bgdata.temperature;
@@ -408,9 +408,8 @@ function updategraph(data) {
         alerts.startAlertProcess(message);
       }
     }
-    if (delta == undefined) {
       if (points[46] == undefined) {
-        myDelta.text = "gap";
+        myDelta.text = "--";
         myDelta.style.fill = "red";
       } else {
         delta = points[47] - points[46];
@@ -424,18 +423,6 @@ function updategraph(data) {
         else if ((Math.abs(delta) >= 9) && (Math.abs(delta) < 18)) { myDelta.style.fill = "yellow"; }
         else { myDelta.style.fill = "red"; }
       }
-
-    } else {
-      if (Math.abs(delta) < 9) { myDelta.style.fill = "fb-green"; }
-      else if ((Math.abs(delta) >= 9) && (Math.abs(delta) < 18)) { myDelta.style.fill = "yellow"; }
-      else { myDelta.style.fill = "red"; }
-      if (prefBgUnits === "mg/dl") {
-        myDelta.text = "\u2206" + delta;
-      } else if (prefBgUnits === "mmol") {
-        delta = mmol(delta);
-        myDelta.text = "\u2206" + delta;
-      }
-    }
   } else if (points[47] == undefined) {
     function findValid(element) { return element != undefined; }
     if (prefBgUnits === "mg/dl") {

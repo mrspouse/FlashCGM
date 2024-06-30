@@ -250,7 +250,6 @@ function buildGraphData(data) {
   let graphpointindex = 0;
   var runningTimestamp = new Date().getTime();
   var indexarray = [];
-  let bgdelta = 0;
 
   // build the index
   obj.sort(function (a, b) {
@@ -274,7 +273,6 @@ function buildGraphData(data) {
       if (!validTimeStamp) {
         lastTimestamp = obj[index].date;
         bgTrend = obj[index].direction;
-        bgdelta = obj[index].delta / 300000;
         validTimeStamp = true;
       }
     }
@@ -287,7 +285,6 @@ function buildGraphData(data) {
       "graphData": flippedPoints,
       "lastPollTime": lastTimestamp,
       "currentTrend": bgTrend,
-      "delta": bgdelta,
       "reservoir": reservoir,
       "pod_age": pod_age,
       "temperature": temperature
